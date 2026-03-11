@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -l \"onClick\\\\|useState\\\\|useEffect\\\\|useRef\\\\|onChange\\\\|onSubmit\" C:\\\\Users\\\\andyb\\\\Code\\\\Jed\\\\components\\\\*.tsx C:\\\\Users\\\\andyb\\\\Code\\\\Jed\\\\app\\\\*.tsx 2>/dev/null)",
+      "WebFetch(domain:cdn.decorilla.com)",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:pixabay.com)",
+      "WebFetch(domain:api.unsplash.com)",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:artuer.com)",
+      "WebFetch(domain:www.itsoverflowing.com)"
+    ]
+  }
+}
