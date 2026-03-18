@@ -42,7 +42,7 @@ export default function Footer() {
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
-            background: "radial-gradient(ellipse at 50% 50%, #c9a84c 0%, transparent 70%)",
+            background: "radial-gradient(ellipse at 50% 50%, #C5920C 0%, transparent 70%)",
           }}
         />
         <div className="max-w-4xl mx-auto px-6 text-center relative">

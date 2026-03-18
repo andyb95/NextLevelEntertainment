@@ -16,10 +16,10 @@ const config: Config = {
           border: "#1e293b",
         },
         gold: {
-          DEFAULT: "#c9a84c",
-          light: "#e8b86d",
-          dark: "#a87d2c",
-          muted: "#8a6820",
+          DEFAULT: "#C5920C",
+          light: "#E8B830",
+          dark: "#9A7008",
+          muted: "#7A5806",
         },
       },
       fontFamily: {
@@ -28,7 +28,7 @@ const config: Config = {
       },
       backgroundImage: {
         "gold-gradient":
-          "linear-gradient(135deg, #c9a84c 0%, #e8b86d 50%, #c9a84c 100%)",
+          "linear-gradient(135deg, #9A7008 0%, #E8B830 40%, #FFF0A0 50%, #E8B830 60%, #9A7008 100%)",
         "dark-gradient":
           "linear-gradient(180deg, rgba(5,8,20,0) 0%, rgba(5,8,20,0.8) 60%, rgba(5,8,20,1) 100%)",
       },
@@ -62,8 +62,8 @@ const config: Config = {
           "100%": { backgroundPosition: "200% center" },
         },
         pulseGold: {
-          "0%, 100%": { boxShadow: "0 0 0 0 rgba(201,168,76,0.4)" },
-          "50%": { boxShadow: "0 0 0 12px rgba(201,168,76,0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(197,146,12,0.4)" },
+          "50%": { boxShadow: "0 0 0 12px rgba(197,146,12,0)" },
         },
       },
       transitionTimingFunction: {

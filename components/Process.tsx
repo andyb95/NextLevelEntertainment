@@ -67,13 +67,13 @@ export default function Process() {
       <div
         className="absolute left-0 top-1/4 w-96 h-96 opacity-5 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, #c9a84c 0%, transparent 70%)",
+          background: "radial-gradient(circle, #C5920C 0%, transparent 70%)",
         }}
       />
       <div
         className="absolute right-0 bottom-1/4 w-96 h-96 opacity-5 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, #c9a84c 0%, transparent 70%)",
+          background: "radial-gradient(circle, #C5920C 0%, transparent 70%)",
         }}
       />
 

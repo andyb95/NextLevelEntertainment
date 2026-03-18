@@ -10,7 +10,8 @@
       "WebFetch(domain:api.unsplash.com)",
       "WebFetch(domain:www.google.com)",
       "WebFetch(domain:artuer.com)",
-      "WebFetch(domain:www.itsoverflowing.com)"
+      "WebFetch(domain:www.itsoverflowing.com)",
+      "Bash(git checkout:*)"
     ]
   }
 }

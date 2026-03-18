@@ -50,7 +50,7 @@ export default function About() {
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5"
         style={{
-          background: "radial-gradient(ellipse at 80% 50%, #c9a84c 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at 80% 50%, #C5920C 0%, transparent 70%)",
         }}
       />
 
