@@ -59,7 +59,7 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-40" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto pb-20 sm:pb-0">
         {/* Eyebrow */}
         <div
           className={`inline-flex items-center gap-2 mb-6 transition-all duration-700 ${

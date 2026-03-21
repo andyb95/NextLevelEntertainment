@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
@@ -51,10 +51,52 @@ const testimonials = [
   },
 ];
 
+type Testimonial = (typeof testimonials)[0];
+
+function TestimonialCard({
+  t,
+  mobile = false,
+}: {
+  t: Testimonial;
+  mobile?: boolean;
+}) {
+  return (
+    <div
+      className={`glass-card rounded-xl ${mobile ? "p-6" : "p-7"} flex flex-col min-h-72`}
+    >
+      <div className="flex gap-0.5 mb-5">
+        {[...Array(t.stars)].map((_, si) => (
+          <Star key={si} size={14} className="text-gold fill-gold" />
+        ))}
+      </div>
+      <Quote size={mobile ? 18 : 20} className="text-gold/30 mb-3 rotate-180" />
+      <p className="text-slate-300 text-sm leading-relaxed mb-6 italic flex-1">
+        &ldquo;{t.quote}&rdquo;
+      </p>
+      <div className="flex items-center gap-3 pt-4 border-t border-cinema-border mt-auto">
+        <div className="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0">
+          <span className="text-gold text-xs font-bold">{t.avatar}</span>
+        </div>
+        <div>
+          <p className="text-white font-semibold text-sm">{t.name}</p>
+          <p className="text-gold text-xs">{t.project}</p>
+          <p className="text-slate-500 text-xs">{t.location}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Testimonials() {
   const headingRef = useRef<HTMLDivElement>(null);
+  const desktopTrackRef = useRef<HTMLDivElement>(null);
+  const mobileTrackRef = useRef<HTMLDivElement>(null);
+  const navigateRef = useRef<(dir: 1 | -1) => void>(() => {});
+
   const [current, setCurrent] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [nextIdx, setNextIdx] = useState(0);
+  const [direction, setDirection] = useState<1 | -1>(1);
+  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -70,26 +112,79 @@ export default function Testimonials() {
   }, []);
 
   const navigate = (dir: 1 | -1) => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setTimeout(() => {
-      setCurrent((c) => (c + dir + testimonials.length) % testimonials.length);
-      setIsAnimating(false);
-    }, 200);
+    if (animating) return;
+    const next = (current + dir + testimonials.length) % testimonials.length;
+    setNextIdx(next);
+    setDirection(dir);
+    setAnimating(true);
   };
+  navigateRef.current = navigate;
 
-  // Auto-advance on mobile (every 5s)
+  // Animate the track when animating becomes true
+  useLayoutEffect(() => {
+    if (!animating) return;
+
+    const animateTrack = (el: HTMLDivElement | null) => {
+      if (!el) return;
+      // Snap to start position without transition
+      el.style.transition = "none";
+      el.style.transform =
+        direction === 1 ? "translateX(0%)" : "translateX(-50%)";
+      // Force reflow so the browser registers the start position
+      void el.offsetHeight;
+      // Slide to end position
+      el.style.transition =
+        "transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+      el.style.transform =
+        direction === 1 ? "translateX(-50%)" : "translateX(0%)";
+    };
+
+    animateTrack(desktopTrackRef.current);
+    animateTrack(mobileTrackRef.current);
+
+    const timer = setTimeout(() => {
+      setCurrent(nextIdx);
+      setAnimating(false);
+      // Reset track to left position ready for next animation
+      [desktopTrackRef.current, mobileTrackRef.current].forEach((el) => {
+        if (el) {
+          el.style.transition = "none";
+          el.style.transform = "translateX(0%)";
+        }
+      });
+    }, 450);
+
+    return () => clearTimeout(timer);
+  }, [animating]);
+
+  // Auto-advance every 5s
   useEffect(() => {
-    const timer = setInterval(() => navigate(1), 5000);
+    const timer = setInterval(() => navigateRef.current(1), 5000);
     return () => clearInterval(timer);
   }, []);
 
-  // Visible testimonials (responsive: 1 on mobile, 3 on desktop)
-  const visible = [
-    testimonials[current % testimonials.length],
-    testimonials[(current + 1) % testimonials.length],
-    testimonials[(current + 2) % testimonials.length],
+  const getVisible = (idx: number) => [
+    testimonials[idx % testimonials.length],
+    testimonials[(idx + 1) % testimonials.length],
+    testimonials[(idx + 2) % testimonials.length],
   ];
+
+  // When going forward (dir=1): left panel = current, right panel = next
+  // When going backward (dir=-1): left panel = next, right panel = current
+  // The track starts at left (showing left panel) and slides to show right panel, or vice versa
+  const leftVisible =
+    !animating || direction === 1 ? getVisible(current) : getVisible(nextIdx);
+  const rightVisible =
+    !animating || direction === -1 ? getVisible(current) : getVisible(nextIdx);
+
+  const leftMobile =
+    !animating || direction === 1
+      ? testimonials[current]
+      : testimonials[nextIdx];
+  const rightMobile =
+    !animating || direction === -1
+      ? testimonials[current]
+      : testimonials[nextIdx];
 
   return (
     <section
@@ -122,71 +217,48 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Desktop: 3-column grid */}
-        <div className="hidden md:grid md:grid-cols-3 gap-6 mb-10">
-          {visible.map((t, i) => (
-            <div
-              key={`${t.name}-${i}`}
-              className={`glass-card rounded-xl p-7 transition-all duration-300 ${
-                isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-              }`}
-            >
-              <div className="flex gap-0.5 mb-5">
-                {[...Array(t.stars)].map((_, si) => (
-                  <Star key={si} size={14} className="text-gold fill-gold" />
-                ))}
-              </div>
-              <Quote size={20} className="text-gold/30 mb-3 rotate-180" />
-              <p className="text-slate-300 text-sm leading-relaxed mb-6 italic">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-cinema-border">
-                <div className="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0">
-                  <span className="text-gold text-xs font-bold">{t.avatar}</span>
-                </div>
-                <div>
-                  <p className="text-white font-semibold text-sm">{t.name}</p>
-                  <p className="text-gold text-xs">{t.project}</p>
-                  <p className="text-slate-500 text-xs">{t.location}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile: single card with nav */}
-        <div className="md:hidden mb-8">
+        {/* Desktop: sliding 3-column track */}
+        <div className="hidden md:block overflow-hidden mb-10">
           <div
-            className={`glass-card rounded-xl p-6 transition-all duration-300 ${
-              isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
-            }`}
+            ref={desktopTrackRef}
+            className="flex"
+            style={{ width: "200%" }}
           >
-            <div className="flex gap-0.5 mb-4">
-              {[...Array(testimonials[current].stars)].map((_, i) => (
-                <Star key={i} size={14} className="text-gold fill-gold" />
+            {/* Left panel */}
+            <div
+              className="grid grid-cols-3 gap-6 items-stretch"
+              style={{ width: "50%" }}
+            >
+              {leftVisible.map((t, i) => (
+                <TestimonialCard key={`left-${t.name}-${i}`} t={t} />
               ))}
             </div>
-            <Quote size={18} className="text-gold/30 mb-3 rotate-180" />
-            <p className="text-slate-300 text-base leading-relaxed mb-6 italic">
-              &ldquo;{testimonials[current].quote}&rdquo;
-            </p>
-            <div className="flex items-center gap-3 pt-4 border-t border-cinema-border">
-              <div className="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0">
-                <span className="text-gold text-xs font-bold">
-                  {testimonials[current].avatar}
-                </span>
-              </div>
-              <div>
-                <p className="text-white font-semibold text-sm">
-                  {testimonials[current].name}
-                </p>
-                <p className="text-gold text-xs">
-                  {testimonials[current].project}
-                </p>
-                <p className="text-slate-500 text-xs">
-                  {testimonials[current].location}
-                </p>
-              </div>
+            {/* Right panel */}
+            <div
+              className="grid grid-cols-3 gap-6 items-stretch"
+              style={{ width: "50%" }}
+            >
+              {rightVisible.map((t, i) => (
+                <TestimonialCard key={`right-${t.name}-${i}`} t={t} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile: sliding single card */}
+        <div className="md:hidden mb-8 overflow-hidden">
+          <div
+            ref={mobileTrackRef}
+            className="flex"
+            style={{ width: "200%" }}
+          >
+            {/* Left panel */}
+            <div style={{ width: "50%" }}>
+              <TestimonialCard t={leftMobile} mobile />
+            </div>
+            {/* Right panel */}
+            <div style={{ width: "50%" }}>
+              <TestimonialCard t={rightMobile} mobile />
             </div>
           </div>
         </div>
@@ -204,7 +276,17 @@ export default function Testimonials() {
             {testimonials.map((_, i) => (
               <button
                 key={i}
-                onClick={() => setCurrent(i)}
+                onClick={() => {
+                  if (i !== current && !animating) {
+                    const forwardDist =
+                      (i - current + testimonials.length) % testimonials.length;
+                    const dir: 1 | -1 =
+                      forwardDist <= testimonials.length / 2 ? 1 : -1;
+                    setNextIdx(i);
+                    setDirection(dir);
+                    setAnimating(true);
+                  }
+                }}
                 className={`rounded-full transition-all duration-300 ${
                   i === current
                     ? "w-6 h-2 bg-gold"
