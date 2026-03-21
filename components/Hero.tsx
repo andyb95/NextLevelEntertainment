@@ -92,7 +92,7 @@ export default function Hero() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Custom home theaters designed and hand-built by Jedidiah and the{" "}
+          Custom home theaters designed and hand-built by our{" "}
           <strong className="text-gold-light font-semibold">
             Next Level Entertainment
           </strong>{" "}

@@ -74,7 +74,7 @@ export default function Contact() {
           </h2>
           <div className="section-divider" />
           <p className="text-slate-400 text-base sm:text-lg max-w-xl mx-auto mt-5">
-            Fill out the form and Jedidiah will reach out within one business
+            Fill out the form and we will reach out within one business
             day to schedule your free, no-obligation consultation.
           </p>
         </div>
@@ -97,7 +97,7 @@ export default function Contact() {
                   Message Received!
                 </h3>
                 <p className="text-slate-400 leading-relaxed">
-                  Thank you for reaching out. Jedidiah will be in touch within
+                  Thank you for reaching out. We will be in touch within
                   one business day to schedule your free consultation. We&apos;re
                   excited to hear about your project!
                 </p>
@@ -283,7 +283,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="mailto:jedidiah@nextlevelent.com"
+                href="mailto:nextlevelavutah@gmail.com"
                 className="flex items-start gap-4 group"
               >
                 <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors mt-0.5">
@@ -294,7 +294,7 @@ export default function Contact() {
                     Email Us
                   </p>
                   <p className="text-white font-semibold group-hover:text-gold transition-colors text-sm">
-                    jedidiah@nextlevelent.com
+                    nextlevelavutah@gmail.com
                   </p>
                   <p className="text-slate-400 text-xs mt-0.5">
                     We respond within 24 hours

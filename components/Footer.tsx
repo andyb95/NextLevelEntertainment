@@ -54,7 +54,7 @@ export default function Footer() {
             Ready to Transform Your Space?
           </h2>
           <p className="text-slate-400 text-base mb-8 max-w-xl mx-auto">
-            Jedidiah only takes on a limited number of projects per quarter to
+            We only take on a limited number of projects per quarter to
             ensure every client receives his full attention. Reserve your
             consultation today.
           </p>
@@ -178,11 +178,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:jedidiah@nextlevelent.com"
+                  href="mailto:nextlevelavutah@gmail.com.com"
                   className="flex items-start gap-3 text-slate-400 hover:text-gold transition-colors group"
                 >
                   <Mail size={15} className="mt-0.5 flex-shrink-0 group-hover:text-gold" />
-                  <span className="text-sm break-all">jedidiah@nextlevelent.com</span>
+                  <span className="text-sm break-all">nextlevelavutah@gmail.com.com</span>
                 </a>
               </li>
               <li>

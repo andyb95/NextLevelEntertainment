@@ -9,7 +9,7 @@ const steps = [
     number: "01",
     title: "Free Consultation",
     description:
-      "We start with a conversation. Jedidiah visits your space (or meets virtually), listens to your vision, and walks you through every possibility — with zero pressure.",
+      "We start with a conversation. We'll visit your space (or meets virtually), listen to your vision, and walk you through every possibility — with zero pressure.",
     detail: "Typically 60–90 minutes",
   },
   {
@@ -25,7 +25,7 @@ const steps = [
     number: "03",
     title: "Expert Installation",
     description:
-      "Jedidiah and our in-house crew handle every phase — framing, wiring, speaker placement, AV rack installation, calibration, and smart home programming.",
+      "Our in-house crew handle every phase — framing, wiring, speaker placement, AV rack installation, calibration, and smart home programming.",
     detail: "Most builds complete in 2–4 weeks",
   },
   {

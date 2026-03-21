@@ -69,7 +69,7 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               name: "Next Level Entertainment",
               description:
-                "Custom home theater design and installation by Jedidiah",
+                "Custom home theater design and installation",
               "@id": "https://nextlevelentertainment.com",
               url: "https://nextlevelentertainment.com",
               telephone: "(555) 867-5309",

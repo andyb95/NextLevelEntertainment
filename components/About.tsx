@@ -17,7 +17,7 @@ const credentials = [
   {
     icon: Users,
     label: "In-House Team",
-    description: "No subcontractors — Jedidiah's crew handles everything",
+    description: "No subcontractors — Our crew handles everything",
   },
   {
     icon: Zap,
@@ -125,7 +125,7 @@ export default function About() {
               <p>
                 Our in-house team handles everything from acoustic framing and
                 wiring to AV calibration and smart home programming. When
-                Jedidiah hands you the remote, you'll know exactly why Next
+                we hand you the remote, you'll know exactly why Next
                 Level isn't just a name — it's a promise.
               </p>
             </div>
@@ -164,7 +164,7 @@ export default function About() {
                 }
                 className="btn-gold"
               >
-                <span>Work With Jedidiah</span>
+                <span>Work With Us</span>
               </button>
             </div>
           </div>
