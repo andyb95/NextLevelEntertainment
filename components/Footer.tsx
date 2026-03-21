@@ -95,7 +95,7 @@ export default function Footer() {
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               Building extraordinary home theaters for discerning homeowners
-              across the DFW Metroplex. Every project is personal. Every build
+              across the Wasatch Front. Every project is personal. Every build
               is next level.
             </p>
             <div className="flex gap-3">
@@ -173,7 +173,7 @@ export default function Footer() {
                   className="flex items-start gap-3 text-slate-400 hover:text-gold transition-colors group"
                 >
                   <Phone size={15} className="mt-0.5 flex-shrink-0 group-hover:text-gold" />
-                  <span className="text-sm">(555) 867-5309</span>
+                  <span className="text-sm">(801) 839-9236</span>
                 </a>
               </li>
               <li>

@@ -102,7 +102,7 @@ export default function Navbar() {
                 className="hidden lg:flex items-center gap-2 text-sm text-slate-400 hover:text-gold transition-colors"
               >
                 <Phone size={14} />
-                <span>(555) 867-5309</span>
+                <span>(801) 839-9236</span>
               </a>
 
               <a
@@ -150,7 +150,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 px-4 py-3 text-slate-400 hover:text-gold transition-colors text-sm"
               >
                 <Phone size={16} />
-                <span>(555) 867-5309</span>
+                <span>(801) 839-9236</span>
               </a>
               <button
                 onClick={() => handleNavClick("#contact")}

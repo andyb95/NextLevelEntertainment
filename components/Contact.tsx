@@ -274,7 +274,7 @@ export default function Contact() {
                     Call or Text
                   </p>
                   <p className="text-white font-semibold group-hover:text-gold transition-colors">
-                    (555) 867-5309
+                    (801) 839-9236
                   </p>
                   <p className="text-slate-400 text-xs mt-0.5">
                     Mon–Fri 8am–6pm · Sat 9am–4pm
@@ -310,11 +310,11 @@ export default function Contact() {
                   <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">
                     Service Area
                   </p>
-                  <p className="text-white font-semibold">DFW Metroplex</p>
+                  <p className="text-white font-semibold">Wasatch</p>
                   <p className="text-slate-400 text-xs mt-0.5">
-                    Dallas · Fort Worth · Plano · Frisco
+                    SLC · Park City · Heber
                     <br />
-                    Allen · McKinney · Southlake
+                    Provo · AF · Ogden
                   </p>
                 </div>
               </div>

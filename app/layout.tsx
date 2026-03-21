@@ -72,7 +72,7 @@ export default function RootLayout({
                 "Custom home theater design and installation",
               "@id": "https://nextlevelentertainment.com",
               url: "https://nextlevelentertainment.com",
-              telephone: "(555) 867-5309",
+              telephone: "(801) 839-9236",
               priceRange: "$$$$",
               image: "https://nextlevelentertainment.com/og-image.jpg",
               address: {
