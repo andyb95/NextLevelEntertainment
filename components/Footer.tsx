@@ -169,7 +169,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:5558675309"
+                  href="tel:8018399236"
                   className="flex items-start gap-3 text-slate-400 hover:text-gold transition-colors group"
                 >
                   <Phone size={15} className="mt-0.5 flex-shrink-0 group-hover:text-gold" />
@@ -178,21 +178,21 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:nextlevelavutah@gmail.com.com"
+                  href="mailto:nextlevelavutah@gmail.com"
                   className="flex items-start gap-3 text-slate-400 hover:text-gold transition-colors group"
                 >
                   <Mail size={15} className="mt-0.5 flex-shrink-0 group-hover:text-gold" />
-                  <span className="text-sm break-all">nextlevelavutah@gmail.com.com</span>
+                  <span className="text-sm break-all">nextlevelavutah@gmail.com</span>
                 </a>
               </li>
               <li>
                 <div className="flex items-start gap-3 text-slate-400">
                   <MapPin size={15} className="mt-0.5 flex-shrink-0 text-gold" />
                   <div className="text-sm">
-                    <p className="text-white font-medium mb-1">DFW Metroplex</p>
-                    <p>Dallas · Fort Worth · Plano</p>
-                    <p>Frisco · Allen · McKinney</p>
-                    <p>Southlake · Flower Mound</p>
+                    <p className="text-white font-medium mb-1">Wasatch Front, Utah</p>
+                    <p>Salt Lake City · Park City</p>
+                    <p>Provo · Orem · Heber</p>
+                    <p>Ogden · American Fork</p>
                   </div>
                 </div>
               </li>

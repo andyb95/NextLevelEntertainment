@@ -98,7 +98,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               {/* Phone quick-dial */}
               <a
-                href="tel:5558675309"
+                href="tel:8018399236"
                 className="hidden lg:flex items-center gap-2 text-sm text-slate-400 hover:text-gold transition-colors"
               >
                 <Phone size={14} />
@@ -146,7 +146,7 @@ export default function Navbar() {
             ))}
             <div className="pt-4 pb-2">
               <a
-                href="tel:5558675309"
+                href="tel:8018399236"
                 className="flex items-center gap-2 px-4 py-3 text-slate-400 hover:text-gold transition-colors text-sm"
               >
                 <Phone size={16} />

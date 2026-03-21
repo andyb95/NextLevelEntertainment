@@ -11,7 +11,8 @@
       "WebFetch(domain:www.google.com)",
       "WebFetch(domain:artuer.com)",
       "WebFetch(domain:www.itsoverflowing.com)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(grep -r \"openGraph\\\\|twitter\\\\|robots\\\\|canonical\" /c/Users/andyb/Code/Jed/app --include=*.tsx --include=*.ts)"
     ]
   }
 }

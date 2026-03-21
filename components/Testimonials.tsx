@@ -62,7 +62,7 @@ function TestimonialCard({
 }) {
   return (
     <div
-      className={`glass-card rounded-xl ${mobile ? "p-6" : "p-7"} flex flex-col min-h-72`}
+      className={`glass-card rounded-xl ${mobile ? "p-6" : "p-7"} flex flex-col h-80`}
     >
       <div className="flex gap-0.5 mb-5">
         {[...Array(t.stars)].map((_, si) => (
