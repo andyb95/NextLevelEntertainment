@@ -173,25 +173,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <button
-        onClick={() =>
-          document
-            .getElementById("services")
-            ?.scrollIntoView({ behavior: "smooth" })
-        }
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 hover:text-gold transition-all duration-300 group ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
-        aria-label="Scroll down"
-      >
-        <span className="text-xs uppercase tracking-widest">Explore</span>
-        <ChevronDown
-          size={20}
-          className="animate-bounce group-hover:text-gold"
-        />
-      </button>
     </section>
   );
 }
