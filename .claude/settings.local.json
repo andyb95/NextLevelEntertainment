@@ -12,7 +12,8 @@
       "WebFetch(domain:artuer.com)",
       "WebFetch(domain:www.itsoverflowing.com)",
       "Bash(git checkout:*)",
-      "Bash(grep -r \"openGraph\\\\|twitter\\\\|robots\\\\|canonical\" /c/Users/andyb/Code/Jed/app --include=*.tsx --include=*.ts)"
+      "Bash(grep -r \"openGraph\\\\|twitter\\\\|robots\\\\|canonical\" /c/Users/andyb/Code/Jed/app --include=*.tsx --include=*.ts)",
+      "mcp__ide__getDiagnostics"
     ]
   }
 }
