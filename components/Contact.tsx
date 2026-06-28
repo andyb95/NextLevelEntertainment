@@ -312,9 +312,9 @@ export default function Contact() {
                   </p>
                   <p className="text-white font-semibold">Wasatch</p>
                   <p className="text-slate-400 text-xs mt-0.5">
-                    SLC · Park City · Heber
+                    SLC · Park City · Kamas
                     <br />
-                    Provo · AF · Ogden
+                    Provo · AF · Sandy
                   </p>
                 </div>
               </div>

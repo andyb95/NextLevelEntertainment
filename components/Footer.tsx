@@ -191,8 +191,8 @@ export default function Footer() {
                   <div className="text-sm">
                     <p className="text-white font-medium mb-1">Wasatch Front, Utah</p>
                     <p>Salt Lake City · Park City</p>
-                    <p>Provo · Orem · Heber</p>
-                    <p>Ogden · American Fork</p>
+                    <p>Provo · Orem · Kamas</p>
+                    <p>Sandy · American Fork</p>
                   </div>
                 </div>
               </li>

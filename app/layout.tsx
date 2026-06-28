@@ -100,8 +100,8 @@ export default function RootLayout({
                 "Park City, UT",
                 "Provo, UT",
                 "Orem, UT",
-                "Heber City, UT",
-                "Ogden, UT",
+                "Kamas, UT",
+                "Sandy, UT",
                 "American Fork, UT",
               ],
               aggregateRating: {
