@@ -6,7 +6,7 @@ import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Michael R.",
-    location: "Dallas, TX",
+    location: "Salt Lake City, UT",
     project: "Dedicated Home Theater",
     stars: 5,
     quote:
@@ -15,7 +15,7 @@ const testimonials = [
   },
   {
     name: "Sarah & Tom K.",
-    location: "Austin, TX",
+    location: "Park City, UT",
     project: "Living Room Conversion",
     stars: 5,
     quote:
@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     name: "David L.",
-    location: "Houston, TX",
+    location: "Draper, UT",
     project: "Basement Theater Build",
     stars: 5,
     quote:
@@ -33,7 +33,7 @@ const testimonials = [
   },
   {
     name: "Jennifer M.",
-    location: "Plano, TX",
+    location: "Sandy, UT",
     project: "Custom Media Room",
     stars: 5,
     quote:
@@ -42,7 +42,7 @@ const testimonials = [
   },
   {
     name: "Carlos P.",
-    location: "San Antonio, TX",
+    location: "South Jordan, UT",
     project: "Sports & Theater Room",
     stars: 5,
     quote:
