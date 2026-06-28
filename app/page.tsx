@@ -38,7 +38,6 @@ export default function Home() {
             </span>
             &rdquo;
           </blockquote>
-          <p className="text-gold font-semibold text-lg">— Jedidiah</p>
           <p className="text-slate-400 text-sm">Founder, Next Level Entertainment</p>
         </div>
       </ParallaxBanner>
